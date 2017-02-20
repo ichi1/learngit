@@ -2,8 +2,8 @@ git
 
 初始化版本库(repository) git init
 查看状态 git status
-查看记录 git log [--graph] [--pretty=oneline] 
-                  显示图像     仅显示1行
+查看记录 git log [--graph] [--pretty=oneline] [--abbrev-commit]
+                  显示图像     仅显示1行         显示短版本号
 查看操作记录 git reflog
 查看stage与最新版本区别 git diff
 查看工作区与最新版本区别 git diff HEAD -- <file>
@@ -27,4 +27,23 @@ git
 删除分支 git branch -d <branchname>
 改变当前分支 git checkout <branchname>
 创建并改变当前分支 git checkout -b <branchname>
-合并分支 git merge <branchname> (默认fast_forward模式)
+合并分支 git merge [--no-ff] [-m <message>] <branchname>
+              禁用fast_forward模式
+    fast_forward模式会将当前分支直接移到合并的分支，删除该分支后会失去该分支信息，
+    禁用后则会保留分支，在merge时生成一个新的commit
+分支合并冲突时，修改后重新提交可以解决冲突
+分支管理策略：主分支master用于版本发布，在dev分支上工作，合作者各自建立自己的分支。
+
+储藏当前工作 git stash
+查看stash  git stash list
+从stash恢复 git stash apply [stashid]
+                           从指定id恢复（否则从最顶端恢复）
+删除stash内容 git stash drop [stashid]
+弹出stash内容 git stash pop
+    等价于 git stash apply
+           git stash drop
+
+                           
+                           
+
+
