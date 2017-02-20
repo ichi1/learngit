@@ -25,6 +25,7 @@ git
 查看分支 git branch
 创建分支 git branch <branchname>
 删除分支 git branch -d <branchname>
+强行删除分支 git branch -D <branchname>
 改变当前分支 git checkout <branchname>
 创建并改变当前分支 git checkout -b <branchname>
 合并分支 git merge [--no-ff] [-m <message>] <branchname>
@@ -36,9 +37,11 @@ git
 
 储藏当前工作 git stash
 查看stash  git stash list
-从stash恢复 git stash apply [stashid]
-                           从指定id恢复（否则从最顶端恢复）
-删除stash内容 git stash drop [stashid]
+从stash恢复 git stash apply [stash@{<id>}]
+                           从指定id恢复（否则从最顶端0恢复）
+删除stash内容 git stash drop [stash@{<id>}]
+    注意：Windows PowerShell中 { }符号需要转义，分别写为`{ `}
+清空stash内容 git stash clear
 弹出stash内容 git stash pop
     等价于 git stash apply
            git stash drop
