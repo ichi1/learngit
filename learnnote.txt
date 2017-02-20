@@ -1,5 +1,12 @@
 git
 
+PowerShell ctrl+s 搜索指令快捷键
+
+linux 安装git指令 sudo apt-get install git
+配置用户名和邮箱
+    git config --global user.name "Your Name"
+    git config --global user.email "email@example.com"
+    
 初始化版本库(repository) git init
 查看状态 git status
 查看记录 git log [--graph] [--pretty=oneline] [--abbrev-commit]
@@ -20,12 +27,34 @@ git
         HEAD^, HEAD^^,... 表示上一个，上两个……版本
         HEAD~20 表示上20个版本
 
-
+github
+创建ssh密钥 ssh-keygen -t rsa -C <email>
+在github添加ssh key 将公钥 id_rsa.pub 复制到github设置中
+添加远程库：
+    github上新建repository
+    git remote add origin git@github.com:<githubid>/<reponame>
+                  远程库名
+推送本地库到远程库 git push [-u] origin [branchname]
+    [-u]参数推送分支所有内容，将本地分支和远程分支关联，之后可以简化推送和拉取
+获取远程库克隆 git clone git@github.com:<githubid>/<reponame>
+查看远程库信息 git remote [-v]
+    [-v]参数显示可抓取和推送的地址
+推送分支：将该分支上所有本地提交推送到远程库
+    git push origin <branchname>
+抓取分支: 
+    获取远程库克隆默认只复制master分支
+    创建远程origin的dev分支到本地 git checkout -b dev origin/dev
+    提交冲突导致推送失败时可以抓取分支并在本地合并解决冲突后推送
+    建立本地分支与远程分支链接  git branch --set-upstream <branchname> origin/<branchname>
+    抓取分支 git pull
+    
+    
+    
 分支操作
 查看分支 git branch
 创建分支 git branch <branchname>
 删除分支 git branch -d <branchname>
-强行删除分支 git branch -D <branchname>
+强行删除分支 git branch -D <branchname>  (用于删除未合并的分支)
 改变当前分支 git checkout <branchname>
 创建并改变当前分支 git checkout -b <branchname>
 合并分支 git merge [--no-ff] [-m <message>] <branchname>
