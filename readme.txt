@@ -1,4 +1,2 @@
-Git is a distributed version control system.
-Git is a free software under the GPL.
-Creating a new branch is quick & simple.
-Merge.
+学习git使用
+learnnote.txt中记录了学习的重要指令及要点
