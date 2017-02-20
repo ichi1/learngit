@@ -1,0 +1,30 @@
+git
+
+初始化版本库(repository) git init
+查看状态 git status
+查看记录 git log [--graph] [--pretty=oneline] 
+                  显示图像     仅显示1行
+查看操作记录 git reflog
+查看stage与最新版本区别 git diff
+查看工作区与最新版本区别 git diff HEAD -- <file>
+
+添加文件到暂存区(stage) git add <file>
+将暂存区修改提交到当前分支 git commit -m <message>
+
+撤销暂存区修改 git reset HEAD <file>
+撤销工作区修改 git checkout -- <file>
+回退版本 git reset [--hard] <commit id>
+    
+    commit id:
+        HEAD 表示当前版本
+        HEAD^, HEAD^^,... 表示上一个，上两个……版本
+        HEAD~20 表示上20个版本
+
+
+分支操作
+查看分支 git branch
+创建分支 git branch <branchname>
+删除分支 git branch -d <branchname>
+改变当前分支 git checkout <branchname>
+创建并改变当前分支 git checkout -b <branchname>
+合并分支 git merge <branchname> (默认fast_forward模式)
