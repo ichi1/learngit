@@ -18,7 +18,8 @@ linux 安装git指令 sudo apt-get install git
 添加文件到暂存区(stage) git add <file>
 将暂存区修改提交到当前分支 git commit -m <message>
 
-撤销暂存区修改 git reset HEAD <file>
+撤销暂存区修改并删除 git reset [--hard] HEAD <file>
+撤销暂存区修改回退到工作区 git reset HEAD <file>
 撤销工作区修改 git checkout -- <file>
 回退版本 git reset [--hard] <commit id>
     
