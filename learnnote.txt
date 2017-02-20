@@ -1,81 +1,139 @@
 git
 
-PowerShell ctrl+s ËÑË÷Ö¸Áî¿ì½İ¼ü
+PowerShell ctrl+s æœç´¢æŒ‡ä»¤å¿«æ·é”®
 
-linux °²×°gitÖ¸Áî sudo apt-get install git
-ÅäÖÃÓÃ»§ÃûºÍÓÊÏä
+linux å®‰è£…gitæŒ‡ä»¤ sudo apt-get install git
+é…ç½®ç”¨æˆ·åå’Œé‚®ç®±
     git config --global user.name "Your Name"
     git config --global user.email "email@example.com"
     
-³õÊ¼»¯°æ±¾¿â(repository) git init
-²é¿´×´Ì¬ git status
-²é¿´¼ÇÂ¼ git log [--graph] [--pretty=oneline] [--abbrev-commit]
-                  ÏÔÊ¾Í¼Ïñ     ½öÏÔÊ¾1ĞĞ         ÏÔÊ¾¶Ì°æ±¾ºÅ
-²é¿´²Ù×÷¼ÇÂ¼ git reflog
-²é¿´stageÓë×îĞÂ°æ±¾Çø±ğ git diff
-²é¿´¹¤×÷ÇøÓë×îĞÂ°æ±¾Çø±ğ git diff HEAD -- <file>
+åˆå§‹åŒ–ç‰ˆæœ¬åº“(repository) git init
+æŸ¥çœ‹çŠ¶æ€ git status
+æŸ¥çœ‹è®°å½• git log [--graph] [--pretty=oneline] [--abbrev-commit]
+                 |æ˜¾ç¤ºå›¾åƒ |ä»…æ˜¾ç¤º1è¡Œ         |æ˜¾ç¤ºçŸ­ç‰ˆæœ¬å·
+æŸ¥çœ‹æ“ä½œè®°å½• git reflog
+æŸ¥çœ‹stageä¸æœ€æ–°ç‰ˆæœ¬åŒºåˆ« git diff
+æŸ¥çœ‹å·¥ä½œåŒºä¸æœ€æ–°ç‰ˆæœ¬åŒºåˆ« git diff HEAD -- <file>
 
-Ìí¼ÓÎÄ¼şµ½Ôİ´æÇø(stage) git add <file>
-½«Ôİ´æÇøĞŞ¸ÄÌá½»µ½µ±Ç°·ÖÖ§ git commit -m <message>
+æ·»åŠ æ–‡ä»¶åˆ°æš‚å­˜åŒº(stage) git add <file>
+å°†æš‚å­˜åŒºä¿®æ”¹æäº¤åˆ°å½“å‰åˆ†æ”¯ git commit -m <message>
 
-³·ÏúÔİ´æÇøĞŞ¸Ä git reset HEAD <file>
-³·Ïú¹¤×÷ÇøĞŞ¸Ä git checkout -- <file>
-»ØÍË°æ±¾ git reset [--hard] <commit id>
+æ’¤é”€æš‚å­˜åŒºä¿®æ”¹ git reset HEAD <file>
+æ’¤é”€å·¥ä½œåŒºä¿®æ”¹ git checkout -- <file>
+å›é€€ç‰ˆæœ¬ git reset [--hard] <commit id>
     
     commit id:
-        HEAD ±íÊ¾µ±Ç°°æ±¾
-        HEAD^, HEAD^^,... ±íÊ¾ÉÏÒ»¸ö£¬ÉÏÁ½¸ö¡­¡­°æ±¾
-        HEAD~20 ±íÊ¾ÉÏ20¸ö°æ±¾
+        HEAD è¡¨ç¤ºå½“å‰ç‰ˆæœ¬
+        HEAD^, HEAD^^,... è¡¨ç¤ºä¸Šä¸€ä¸ªï¼Œä¸Šä¸¤ä¸ªâ€¦â€¦ç‰ˆæœ¬
+        HEAD~20 è¡¨ç¤ºä¸Š20ä¸ªç‰ˆæœ¬
 
-github
-´´½¨sshÃÜÔ¿ ssh-keygen -t rsa -C <email>
-ÔÚgithubÌí¼Óssh key ½«¹«Ô¿ id_rsa.pub ¸´ÖÆµ½githubÉèÖÃÖĞ
-Ìí¼ÓÔ¶³Ì¿â£º
-    githubÉÏĞÂ½¨repository
-    git remote add origin git@github.com:<githubid>/<reponame>
-                  Ô¶³Ì¿âÃû
-ÍÆËÍ±¾µØ¿âµ½Ô¶³Ì¿â git push [-u] origin [branchname]
-    [-u]²ÎÊıÍÆËÍ·ÖÖ§ËùÓĞÄÚÈİ£¬½«±¾µØ·ÖÖ§ºÍÔ¶³Ì·ÖÖ§¹ØÁª£¬Ö®ºó¿ÉÒÔ¼ò»¯ÍÆËÍºÍÀ­È¡
-»ñÈ¡Ô¶³Ì¿â¿ËÂ¡ git clone git@github.com:<githubid>/<reponame>
-²é¿´Ô¶³Ì¿âĞÅÏ¢ git remote [-v]
-    [-v]²ÎÊıÏÔÊ¾¿É×¥È¡ºÍÍÆËÍµÄµØÖ·
-ÍÆËÍ·ÖÖ§£º½«¸Ã·ÖÖ§ÉÏËùÓĞ±¾µØÌá½»ÍÆËÍµ½Ô¶³Ì¿â
-    git push origin <branchname>
-×¥È¡·ÖÖ§: 
-    »ñÈ¡Ô¶³Ì¿â¿ËÂ¡Ä¬ÈÏÖ»¸´ÖÆmaster·ÖÖ§
-    ´´½¨Ô¶³ÌoriginµÄdev·ÖÖ§µ½±¾µØ git checkout -b dev origin/dev
-    Ìá½»³åÍ»µ¼ÖÂÍÆËÍÊ§°ÜÊ±¿ÉÒÔ×¥È¡·ÖÖ§²¢ÔÚ±¾µØºÏ²¢½â¾ö³åÍ»ºóÍÆËÍ
-    ½¨Á¢±¾µØ·ÖÖ§ÓëÔ¶³Ì·ÖÖ§Á´½Ó  git branch --set-upstream <branchname> origin/<branchname>
-    ×¥È¡·ÖÖ§ git pull
-    
-    
-    
-·ÖÖ§²Ù×÷
-²é¿´·ÖÖ§ git branch
-´´½¨·ÖÖ§ git branch <branchname>
-É¾³ı·ÖÖ§ git branch -d <branchname>
-Ç¿ĞĞÉ¾³ı·ÖÖ§ git branch -D <branchname>  (ÓÃÓÚÉ¾³ıÎ´ºÏ²¢µÄ·ÖÖ§)
-¸Ä±äµ±Ç°·ÖÖ§ git checkout <branchname>
-´´½¨²¢¸Ä±äµ±Ç°·ÖÖ§ git checkout -b <branchname>
-ºÏ²¢·ÖÖ§ git merge [--no-ff] [-m <message>] <branchname>
-              ½ûÓÃfast_forwardÄ£Ê½
-    fast_forwardÄ£Ê½»á½«µ±Ç°·ÖÖ§Ö±½ÓÒÆµ½ºÏ²¢µÄ·ÖÖ§£¬É¾³ı¸Ã·ÖÖ§ºó»áÊ§È¥¸Ã·ÖÖ§ĞÅÏ¢£¬
-    ½ûÓÃºóÔò»á±£Áô·ÖÖ§£¬ÔÚmergeÊ±Éú³ÉÒ»¸öĞÂµÄcommit
-·ÖÖ§ºÏ²¢³åÍ»Ê±£¬ĞŞ¸ÄºóÖØĞÂÌá½»¿ÉÒÔ½â¾ö³åÍ»
-·ÖÖ§¹ÜÀí²ßÂÔ£ºÖ÷·ÖÖ§masterÓÃÓÚ°æ±¾·¢²¼£¬ÔÚdev·ÖÖ§ÉÏ¹¤×÷£¬ºÏ×÷Õß¸÷×Ô½¨Á¢×Ô¼ºµÄ·ÖÖ§¡£
 
-´¢²Øµ±Ç°¹¤×÷ git stash
-²é¿´stash  git stash list
-´Óstash»Ö¸´ git stash apply [stash@{<id>}]
-                           ´ÓÖ¸¶¨id»Ö¸´£¨·ñÔò´Ó×î¶¥¶Ë0»Ö¸´£©
-É¾³ıstashÄÚÈİ git stash drop [stash@{<id>}]
-    ×¢Òâ£ºWindows PowerShellÖĞ { }·ûºÅĞèÒª×ªÒå£¬·Ö±ğĞ´Îª`{ `}
-Çå¿ÕstashÄÚÈİ git stash clear
-µ¯³östashÄÚÈİ git stash pop
-    µÈ¼ÛÓÚ git stash apply
+è¿œç¨‹ä»“åº“
+
+åˆ›å»ºsshå¯†é’¥ ssh-keygen -t rsa -C <email>
+åœ¨githubæ·»åŠ ssh key å°†å…¬é’¥ id_rsa.pub å¤åˆ¶åˆ°githubè®¾ç½®ä¸­
+æ·»åŠ è¿œç¨‹åº“ï¼š
+    githubä¸Šæ–°å»ºrepository
+    git remote add <remote> git@github.com:<githubid>/<reponame>
+           è¿œç¨‹åº“å(é€šå¸¸é»˜è®¤ä¸ºoriginï¼‰
+æ¨é€æœ¬åœ°åº“åˆ°è¿œç¨‹åº“ git push [-u] <remote> [branchname]
+    [-u]å‚æ•°æ¨é€åˆ†æ”¯æ‰€æœ‰å†…å®¹ï¼Œå°†æœ¬åœ°åˆ†æ”¯å’Œè¿œç¨‹åˆ†æ”¯å…³è”ï¼Œä¹‹åå¯ä»¥ç®€åŒ–æ¨é€å’Œæ‹‰å–
+è·å–è¿œç¨‹åº“å…‹éš† git clone git@github.com:<githubid>/<reponame>
+æŸ¥çœ‹è¿œç¨‹åº“ä¿¡æ¯ git remote [-v]
+    [-v]å‚æ•°æ˜¾ç¤ºå¯æŠ“å–å’Œæ¨é€çš„åœ°å€
+æ¨é€åˆ†æ”¯ï¼šå°†è¯¥åˆ†æ”¯ä¸Šæ‰€æœ‰æœ¬åœ°æäº¤æ¨é€åˆ°è¿œç¨‹åº“
+    git push [<remote>] [<branchname>]
+æŠ“å–åˆ†æ”¯: 
+    è·å–è¿œç¨‹åº“å…‹éš†é»˜è®¤åªå¤åˆ¶masteråˆ†æ”¯
+    åˆ›å»ºè¿œç¨‹<remote>çš„åˆ†æ”¯åˆ°æœ¬åœ° git checkout -b <branchname> <remote>/<branchname>
+    æäº¤å†²çªå¯¼è‡´æ¨é€å¤±è´¥æ—¶å¯ä»¥æŠ“å–åˆ†æ”¯å¹¶åœ¨æœ¬åœ°åˆå¹¶è§£å†³å†²çªåæ¨é€
+    å»ºç«‹æœ¬åœ°åˆ†æ”¯ä¸è¿œç¨‹åˆ†æ”¯é“¾æ¥  git branch --set-upstream <branchname> <remote>/<branchname>
+    æŠ“å–åˆ†æ”¯ git pull [<remote>] [<branchname>]
+    
+    
+åˆ†æ”¯æ“ä½œ
+
+æŸ¥çœ‹åˆ†æ”¯ git branch
+åˆ›å»ºåˆ†æ”¯ git branch <branchname>
+åˆ é™¤åˆ†æ”¯ git branch -d <branchname>
+å¼ºè¡Œåˆ é™¤åˆ†æ”¯ git branch -D <branchname>  (ç”¨äºåˆ é™¤æœªåˆå¹¶çš„åˆ†æ”¯)
+æ”¹å˜å½“å‰åˆ†æ”¯ git checkout <branchname>
+åˆ›å»ºå¹¶æ”¹å˜å½“å‰åˆ†æ”¯ git checkout -b <branchname>
+åˆå¹¶åˆ†æ”¯ git merge [--no-ff] [-m <message>] <branchname>
+                   |ç¦ç”¨fast_forwardæ¨¡å¼
+    fast_forwardæ¨¡å¼ä¼šå°†å½“å‰åˆ†æ”¯ç›´æ¥ç§»åˆ°åˆå¹¶çš„åˆ†æ”¯ï¼Œåˆ é™¤è¯¥åˆ†æ”¯åä¼šå¤±å»è¯¥åˆ†æ”¯ä¿¡æ¯ï¼Œ
+    ç¦ç”¨ååˆ™ä¼šä¿ç•™åˆ†æ”¯ï¼Œåœ¨mergeæ—¶ç”Ÿæˆä¸€ä¸ªæ–°çš„commit
+åˆ†æ”¯åˆå¹¶å†²çªæ—¶ï¼Œä¿®æ”¹åé‡æ–°æäº¤å¯ä»¥è§£å†³å†²çª
+åˆ†æ”¯ç®¡ç†ç­–ç•¥ï¼šä¸»åˆ†æ”¯masterç”¨äºç‰ˆæœ¬å‘å¸ƒï¼Œåœ¨devåˆ†æ”¯ä¸Šå·¥ä½œï¼Œåˆä½œè€…å„è‡ªå»ºç«‹è‡ªå·±çš„åˆ†æ”¯ã€‚
+
+å‚¨è—å½“å‰å·¥ä½œ git stash
+æŸ¥çœ‹stash  git stash list
+ä»stashæ¢å¤ git stash apply [stash@{<id>}]
+                            |ä»æŒ‡å®šidæ¢å¤ï¼ˆå¦åˆ™ä»æœ€é¡¶ç«¯0æ¢å¤ï¼‰
+åˆ é™¤stashå†…å®¹ git stash drop [stash@{<id>}]
+    æ³¨æ„ï¼šWindows PowerShellä¸­ { }ç¬¦å·éœ€è¦è½¬ä¹‰ï¼Œåˆ†åˆ«å†™ä¸º`{ `}
+æ¸…ç©ºstashå†…å®¹ git stash clear
+å¼¹å‡ºstashå†…å®¹ git stash pop
+    ç­‰ä»·äº git stash apply
            git stash drop
 
-                           
-                           
+å¤šäººåä½œçš„å·¥ä½œæ¨¡å¼é€šå¸¸æ˜¯è¿™æ ·ï¼š
+    1.é¦–å…ˆï¼Œå¯ä»¥è¯•å›¾ç”¨git pushæ¨é€è‡ªå·±çš„ä¿®æ”¹ï¼›
+    2.å¦‚æœæ¨é€å¤±è´¥ï¼Œåˆ™å› ä¸ºè¿œç¨‹åˆ†æ”¯æ¯”ä½ çš„æœ¬åœ°æ›´æ–°ï¼Œéœ€è¦å…ˆç”¨git pullè¯•å›¾åˆå¹¶ï¼›
+    3.å¦‚æœåˆå¹¶æœ‰å†²çªï¼Œåˆ™è§£å†³å†²çªï¼Œå¹¶åœ¨æœ¬åœ°æäº¤ï¼›
+    4.æ²¡æœ‰å†²çªæˆ–è€…è§£å†³æ‰å†²çªåï¼Œå†ç”¨git pushæ¨é€å°±èƒ½æˆåŠŸï¼
+    5.å¦‚æœgit pullæç¤ºâ€œno tracking informationâ€ï¼Œåˆ™è¯´æ˜æœ¬åœ°åˆ†æ”¯å’Œè¿œç¨‹åˆ†æ”¯çš„é“¾æ¥å…³ç³»æ²¡æœ‰åˆ›å»ºï¼Œç”¨å‘½ä»¤git branch --set-upstream branch-name origin/branch-nameã€‚
+
+    
+æ ‡ç­¾ç®¡ç†
+    æ ‡ç­¾(tag)æ˜¯ç‰ˆæœ¬åº“çš„å¿«ç…§ï¼Œå®é™…å°±æ˜¯æŒ‡å‘æŸä¸ªcommitçš„æŒ‡é’ˆ
+
+å¯¹å½“å‰åˆ†æ”¯åˆ›å»ºæ ‡ç­¾ git tag <tagname>
+å¯¹å†å²commitåˆ›å»ºæ ‡ç­¾ git tag <tagname> <commitid>
+åˆ›å»ºå¸¦è¯´æ˜æ ‡ç­¾ git tag -a <tagname> -m <message> [<commitid>]
+ç”¨ç§é’¥ç­¾å(PGP)æ ‡ç­¾ git tag -s <tagname> -m <message> [<commitid>]
+    éœ€è¦GnuPGï¼ŒPGPç­¾åçš„æ ‡ç­¾æ— æ³•ä¼ªé€ 
+æŸ¥çœ‹æ ‡ç­¾ git tag 
+æŸ¥çœ‹æ ‡ç­¾è¯´æ˜ git show <tagname>
+åˆ é™¤æ ‡ç­¾ git tag -d <tagname>
+æ¨é€æ ‡ç­¾åˆ°è¿œç¨‹ git push <remote> <tagname>
+ä¸€æ¬¡æ€§æ¨é€æ‰€æœ‰æœªæ¨é€æ ‡ç­¾ git push <remote> --tags
+è¿œç¨‹åˆ é™¤æ ‡ç­¾ï¼šå…ˆæœ¬åœ°åˆ é™¤ï¼Œç„¶å git push <remote> :refs/tags/<tagname>
+
+github
+1.ç‚¹å‡» fork åœ¨è‡ªå·±è´¦å·ä¸‹å…‹éš†ä¸€ä¸ªä»“åº“ï¼Œå¯¹è‡ªå·±çš„ä»“åº“æ‰ç”¨è¯»å†™æƒé™
+2.ä»è‡ªå·±è´¦å·ä¸‹cloneä»“åº“åˆ°æœ¬åœ°
+3.æœ¬åœ°ä¿®æ”¹åpushåˆ°è¿œç¨‹ä»“åº“
+4.å‘èµ·pull request
 
 
+å…¶ä»–gité…ç½®
+
+.gitignore
+    è¯¥æ–‡ä»¶ä¸­çš„æ–‡ä»¶åä¼šè¢«gitå¿½ç•¥ã€‚
+    https://github.com/github/gitignore
+    
+    æ–‡ä»¶å<file>åœ¨.gitignoreä¸­æ— æ³•addæ—¶ï¼š
+    1.å‚æ•°-få¯ä»¥å¼ºåˆ¶æ·»åŠ æ–‡ä»¶åˆ°git
+        git add -f <file>
+    2.æ£€æŸ¥.gitignoreè§„åˆ™æ˜¯å¦æ­£ç¡®
+        git check-ignore -v <file>
+ 
+é…ç½®æŒ‡ä»¤åˆ«å
+    git config [--global] alias.<alias> <command>
+               |å¯¹å½“å‰ç”¨æˆ·ç”Ÿæ•ˆï¼ˆæ²¡æœ‰åˆ™å¯¹å½“å‰ä»“åº“ç”Ÿæ•ˆï¼‰
+        å°†<alias>è®¾ä¸º<command>çš„åˆ«å
+        ä¾‹ï¼š
+        git config --global alias.co checkout
+        git config --global alias.ct commit
+        git config --global alias.br branch
+        git config --global alias.unstage 'reset HEAD'
+        git config --global alias.last 'log -1'
+        git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+    ä»“åº“çš„é…ç½®æ–‡ä»¶åœ¨.git/configä¸­
+    ç”¨æˆ·çš„é…ç½®æ–‡ä»¶åœ¨ç”¨æˆ·ä¸»ç›®å½•ä¸‹çš„.gitconfigä¸­
+
+æ­å»ºgitæœåŠ¡å™¨(linux)
+    http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000
+    
